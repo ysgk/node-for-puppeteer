@@ -1,3 +1,5 @@
+# https://github.com/GoogleChrome/puppeteer/issues/290
+
 FROM node:8
 
 RUN apt-get update && \
