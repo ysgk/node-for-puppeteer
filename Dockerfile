@@ -2,6 +2,14 @@
 
 FROM node:10
 
+ENV YARN_VERSION 1.15.2
+
+RUN curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
+    && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/ \
+    && ln -snf /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn \
+    && ln -snf /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
+    && rm yarn-v$YARN_VERSION.tar.gz
+
 RUN apt-get update && apt-get install -y \
         gconf-service \
         libasound2 \
@@ -40,9 +48,10 @@ RUN apt-get update && apt-get install -y \
         libnss3 \
         lsb-release \
         xdg-utils \
-        wget \
+        wget
 
-        # 日本語フォントをインストール
+# 日本語フォントをインストール
+RUN apt-get install -y \
         fonts-ipafont-gothic \
         fonts-ipafont-mincho
 
