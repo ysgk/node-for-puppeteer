@@ -2,7 +2,7 @@
 
 FROM node:10
 
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.16.0
 
 RUN curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
     && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/ \
