@@ -1,6 +1,6 @@
 # https://github.com/GoogleChrome/puppeteer/issues/290
 
-FROM node:10
+FROM node:12
 
 ENV YARN_VERSION 1.16.0
 
