@@ -47,4 +47,8 @@ RUN apt-get install -y \
         fonts-ipafont-gothic \
         fonts-ipafont-mincho
 
+# webp ビルド用に libgl をインストール
+# https://github.com/imagemin/cwebp-bin/issues/31#issuecomment-588383966
+RUN libglu1
+
 CMD ["node"]
