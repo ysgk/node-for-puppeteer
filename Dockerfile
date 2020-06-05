@@ -49,6 +49,6 @@ RUN apt-get install -y \
 
 # webp ビルド用に libgl をインストール
 # https://github.com/imagemin/cwebp-bin/issues/31#issuecomment-588383966
-RUN libglu1
+RUN apt-get install -y libglu1
 
 CMD ["node"]
